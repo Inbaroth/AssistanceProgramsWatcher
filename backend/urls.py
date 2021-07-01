@@ -19,6 +19,6 @@ from AssistanceProgramsWatcher.views import ListProgramView, ListEligibleTreatme
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', ListProgramView.as_view()),
-    path('', ListEligibleTreatmentView.as_view())
+    path('', ListProgramView.as_view(), name='index'),
+    path('', ListEligibleTreatmentView.as_view(), name='treatments')
 ]
