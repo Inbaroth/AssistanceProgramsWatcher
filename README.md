@@ -16,7 +16,7 @@ First terminal - Inside the project directory perform these commands:
 1. virtualenv env
 2. env\scripts\activate
 3. pip install -r requirements.txt
-4. python manage.py runserver (username: inbar, password: inbar12345)
+4. python manage.py runserver                             if needed: (username: inbar, password: inbar12345)
 ```
 
 Second terminal - Inside the project directory perform these commands:
