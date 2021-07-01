@@ -30,7 +30,7 @@ Second terminal - Inside the project directory perform these commands:
 ## Usage
 Click the local host url, it will appear in the first terminal like this:
 ```bash
-Starting development server at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+Starting development server at http://127.0.0.1:8000/
 ```
 Now you can see the data which have been collected by the web scraper and which have been inserted into our remote MySQL DB.
 
