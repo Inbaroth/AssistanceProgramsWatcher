@@ -49,3 +49,4 @@ Refreshing data on a click.
 
 Upload app to remote host.
 
+Implement other API requests, e.g. get program data by name.
