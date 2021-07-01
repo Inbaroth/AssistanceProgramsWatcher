@@ -100,6 +100,7 @@ def iterate_and_operate(funds_ul, fund_operate, treatments_operate):
         # sleep few seconds to avoid database block
         sleep(5)
         if fund_model_instance is not None:
+            print('successful insert')
             treatment_l = get_fund_treatments_data(fund['url'])   # asumption: we are ok with having data only about program and not about the treatments avilable in this program
             if treatment_l is not None:
                 for treatment in treatment_l:
