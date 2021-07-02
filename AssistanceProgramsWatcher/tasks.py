@@ -102,11 +102,11 @@ def iterate_and_operate(funds_ul, fund_operate, treatments_operate):
         if fund_model_instance is not None:
             print('successful insert')
             treatment_l = get_fund_treatments_data(fund['url'])   # asumption: we are ok with having data only about program and not about the treatments avilable in this program
+            print(f"list of treatments in {fund['name']}")
+            print(treatment_l)
             if treatment_l is not None:
                 for treatment in treatment_l:
                     treatment_model_instance = treatments_operate(treatment)
-                    # sleep few seconds to avoid database block
-                    sleep(5)
                     if treatment_model_instance is not None:
                         fund_model_instance[0].treatments.add(treatment_model_instance[0])
 
@@ -143,27 +143,18 @@ def get_int_amount(grant_amount_str):
         return 0
 
 
-# we don't allow partial program data
-def is_valid(fund):
-    if None in fund.values():
-        return False
-
-
 def create_or_update_fund(fund):
     # If AssistanceProgram exists with name=fund['name'] then update with rest of data
     # Else create new AssistanceProgram
-    if is_valid(fund):
-        try:
-            return AssistanceProgram.objects.update_or_create(
-                name=fund['name'],
-                defaults={'status': convert_to_bool(fund['status']),
-                          'grant_amount': get_int_amount(fund['grant_amount']),
-                          'currency': get_currency(fund['grant_amount']),
-                          'url': fund['url']})
-        except Exception as e:
-            print(e.__str__())
-    else:
-        return None
+    try:
+        return AssistanceProgram.objects.update_or_create(
+            name=fund['name'],
+            defaults={'status': convert_to_bool(fund['status']),
+                      'grant_amount': get_int_amount(fund['grant_amount']),
+                      'currency': get_currency(fund['grant_amount']),
+                      'url': fund['url']})
+    except Exception as e:
+        print(e.__str__())
 
 
 def create_or_update_treatment(treatment):
