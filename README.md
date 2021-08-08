@@ -1,6 +1,6 @@
 # Assistance Program Watcher 
 
-In this exercise I created a monitoring tool that, using scraping on the website, updates of the local system (using remote DB) about the open/closed status of the assistance programs and displays them in the website.
+In this exercise I created a monitoring tool that, using web scraping, updates the local system (using remote DB) about the open/closed status of the assistance programs and displays them in the website.
 
 In any case of missing information about the status, the default value will be closed.
 
