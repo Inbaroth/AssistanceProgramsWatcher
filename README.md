@@ -1,6 +1,6 @@
 # Assistance Program Watcher 
-### Home assignment by TailorMed
-In this exercise I create a monitoring tool that, using scraping on the website, updates our local system (using remote DB) about the open/closed status of the assistance programs and displays them in our website.
+
+In this exercise I created a monitoring tool that, using scraping on the website, updates of the local system (using remote DB) about the open/closed status of the assistance programs and displays them in the website.
 
 In any case of missing information about the status, the default value will be closed.
 
